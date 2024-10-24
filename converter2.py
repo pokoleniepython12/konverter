@@ -5,8 +5,7 @@ from tkinter import ttk
 
 
 def exchange():
-    code=entry.get()
-
+    code=combobox.get()
     if code:
         try:
             response=requests.get("https://open.er-api.com/v6/latest/USD")
