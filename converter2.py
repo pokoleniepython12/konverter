@@ -14,7 +14,7 @@ def exchange():
             if code in data["rates"]:
                 exchange_rates=data["rates"][code]
                 mb.showinfo("Курс обмена",
-                            f"Курс к доллару: {exchange_rates} {code} за 1 доллар")
+                            f"Курс к доллару: {exchange_rates:.1f} {code} за 1 доллар")
         except Exception as error:
             mb.showerror("Ошибка",f"Произошла ошибка {error}")
 
