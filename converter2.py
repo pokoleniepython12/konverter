@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox as mb
 import requests
+from tkinter import ttk
 
 
 def exchange():
@@ -24,11 +25,14 @@ window=Tk()
 window.title("Конвертер валют")
 window.geometry("400x500")
 
-Label(text="Введите код валюты").pack(pady=10)
+ttk.Label(text="Введите код валюты").pack(pady=10)
 
-entry=Entry()
-entry.pack(pady=10)
 
-Button(text="Получить курс обмена к доллару", command=exchange).pack(pady=10)
+popular_cur = ["EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "CNY", "RUB", "KZT",
+"UZS"]
+combobox=ttk.Combobox(values=popular_cur)
+combobox.pack(pady=10)
+
+ttk.Button(text="Получить курс обмена к доллару", command=exchange).pack(pady=10)
 
 window.mainloop()
